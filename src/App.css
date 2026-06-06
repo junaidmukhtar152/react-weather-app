@@ -1,0 +1,283 @@
+/* Reset */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background */
+
+body {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Segoe UI", sans-serif;
+
+  background: linear-gradient(
+    135deg,
+    #3b63be,
+    #1e8a1ecb,
+    #2563eb,
+    #38bdf8
+  );
+
+  background-size: 400% 400%;
+
+  animation: gradientMove 12s ease infinite;
+}
+
+/* Animated Background */
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Main Container */
+
+.container {
+ 
+  width: 90%;
+  max-width: 600px;
+
+  padding: 30px;
+
+  border-radius: 25px;
+
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(15px);
+
+  -webkit-backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(255, 255, 255, 0.1);
+
+  animation: cardAppear 1s ease;
+}
+
+/* Card Animation */
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Heading */
+
+.container h1 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+/* Input */
+
+input {
+  width: 70%;
+
+  padding: 12px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  outline: none;
+
+  font-size: 16px;
+
+  transition: 0.3s;
+}
+
+input:focus {
+  transform: scale(1.03);
+
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Button */
+
+button {
+  margin-left: 10px;
+
+  padding: 12px 18px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Weather Card */
+
+.weather-card {
+  margin-top: 25px;
+
+  color: white;
+
+  animation: fadeWeather 0.8s ease;
+}
+
+@keyframes fadeWeather {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* City */
+
+.weather-card h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* Temperature */
+
+.temperature {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 10px 0;
+
+  animation: pulseTemp 2s infinite;
+}
+
+@keyframes pulseTemp {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Condition */
+
+.weather-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+/* Description */
+
+.weather-card p {
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+/* Weather Icon */
+
+.weather-card img {
+  width: 120px;
+
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Loading */
+
+.loading {
+  margin-top: 20px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Error */
+
+.error {
+  color: #ffb4b4;
+
+  margin-top: 15px;
+
+  font-weight: bold;
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+  .container {
+    width: 90%;
+  }
+
+  input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+
